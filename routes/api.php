@@ -9,13 +9,9 @@ Route::post('/login', [LoginController::class, 'store']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::middleware('auth:api')->group(function () {
-    Route::post('/addAddress', [RegisterController::class, 'addAddre']);
+    Route::post('/user/addAddress', [RegisterController::class, 'addAddr']);
     Route::post('/logout', [LoginController::class, 'logout']);
-    Route::apiResource('products', ProductController::class)->only(
-        'store',
-        'update',
-        'destroy',
-    );
+    Route::apiResource('products', ProductController::class)->except('index', 'show');
 });
 
 Route::apiResource('products', ProductController::class)->only('index', 'show');
