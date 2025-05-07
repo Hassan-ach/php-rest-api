@@ -87,4 +87,4 @@ POST /register
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)j
+[MIT](https://choosealicense.com/licenses/mit/)
